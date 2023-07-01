@@ -9,8 +9,8 @@ luas_segitiga()
 
 
 def luas_segi_panjang():
-    p = int(input("Masukkan panjang persegi panjang: "))
-    l = int(input("Masukkan lebar persegi panjang: "))
+    p = int(input("panjang persegi panjang: "))
+    l = int(input("lebar persegi panjang: "))
 
     luas = p*l
     print("luas persegi panjang adalah: ", luas)
