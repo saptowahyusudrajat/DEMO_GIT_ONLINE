@@ -13,6 +13,6 @@ def luas_segi_panjang():
     l = int(input("lebar persegi panjang: "))
 
     luas = p*l
-    print("luas persegi panjang adalah sekian ya: ", luas)
+    print("luas persegi panjang adalah sekian yahhhh: ", luas)
 
 luas_segi_panjang()
