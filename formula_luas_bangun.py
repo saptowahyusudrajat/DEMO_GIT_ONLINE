@@ -16,3 +16,5 @@ def luas_segi_panjang():
     print("luas persegi panjang adalah sekian yahhhh: ", luas)
 
 luas_segi_panjang()
+
+print ("dari banch anyar")
