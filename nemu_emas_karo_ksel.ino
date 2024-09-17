@@ -1,4 +1,3 @@
-#include <SoftwareSerial.h>
 const byte numChars = 32;
 char receivedChars[numChars];   // an array to store the received data
 static byte ndx = 0;
@@ -14,16 +13,15 @@ void setup() {
 void loop() {
     recvWithEndMarker();
     showNewData();
-    
-    
 }
 
 void recvWithEndMarker() {
     char endMarker = '=';
     char rc;
    
-    if (mySerial.available() > 0 && newData == false) {
+    while (mySerial.available() > 0 && newData == false) {
         rc = mySerial.read();
+
         if (rc != endMarker) {
             receivedChars[ndx] = rc;
             ndx++;
@@ -33,7 +31,7 @@ void recvWithEndMarker() {
         }
         else {
             receivedChars[ndx] = '\0'; // terminate the string
-           //ndx = 0;
+            ndx = 0;
             newData = true;
         }
     }
@@ -41,19 +39,17 @@ void recvWithEndMarker() {
 
 void showNewData() {
     if (newData == true) {
-        strrevi(receivedChars);
-        Serial.println(receivedChars);        
+        strrev(receivedChars);
+        Serial.println(receivedChars);
         //Serial.println(receivedChars[ndx]);
         newData = false;
-        ndx=0;
-       
         
     }
     
 }
 
 
-void strrevi(char *string)
+void strrev(char *string)
 {
     
     int len = 0;
@@ -69,6 +65,5 @@ void strrevi(char *string)
         string[down++] = string[up];
         string[up--] = c;
     }
-   // delay(20);
 
 }
